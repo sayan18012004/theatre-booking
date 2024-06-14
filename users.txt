@@ -1,0 +1,28 @@
+{
+    "userDict": {
+        "bruceWayne": {
+            "age": 42,
+            "gender": "MALE",
+            "password": "f64itg464itr67",
+            "preferences": "some random stuff",
+            "type": "REGULAR",
+            "username": "bruceWayne"
+        },
+        "clark": {
+            "age": 32,
+            "gender": "MALE",
+            "password": "f64itg464itr67",
+            "preferences": "some random stuff",
+            "type": "REGULAR",
+            "username": "clark"
+        },
+        "dianna": {
+            "age": 32,
+            "gender": "FEMALE",
+            "password": "f64itg464itr67",
+            "preferences": "some other random stuff",
+            "type": "REGULAR",
+            "username": "dianna"
+        }
+    }
+}
