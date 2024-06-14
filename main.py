@@ -67,22 +67,5 @@ async def delete_user(username: str):
         return "User not found"
 
 
-# @app.post("/add_movie")
-# async def add_movie(movieObject: models.movies):
-#     if movieObject.title in newMovieDict:
-#         return "Movie already exists"
-#     else:
-#         newMovieDict[movieObject.title] = movieObject
-#     with open('movies.json', 'w') as json_movies:
-#         json.dump({k: v.dict() for k, v in newMovieDict.items()}, json_movies, cls=UserEncoder, indent=4)
-#
-#     return "Movie Added"
-#
-#
-# @app.get("/get_movies")
-# async def get_movies():
-#     return userDict
-
-
 if __name__ == "__main__":
     uvicorn.run("main:app", reload=True)
