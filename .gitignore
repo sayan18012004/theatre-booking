@@ -6,7 +6,6 @@ __pycache__/
 *.so
 
 # Distribution / packaging
-.idea/
 bin/
 build/
 develop-eggs/
