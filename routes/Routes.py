@@ -31,12 +31,13 @@ async def update_user(username: str, userObject: models.User):
 async def delete_user(username: str):
     service_response = delete_user(username)
     return service_response
+#
 # @router.post("/create_movie")
 # async def createMovie(movieObject: models.User):
 #     service_response = create_movie(movieObject)
 #     return service_response
 #
 #
-# @router.get("/get_movie")
+# @router.get("/get_movies")
 # async def get_movies():
 #     return moviesWrapper
