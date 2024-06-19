@@ -7,7 +7,6 @@ class USER_TYPE(str, Enum):
     ADMIN = "ADMIN"
     REGULAR = "REGULAR"
 
-
 class GENDER(str, Enum):
     MALE = "MALE"
     FEMALE = "FEMALE"
