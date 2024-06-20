@@ -7,7 +7,7 @@ app = FastAPI()
 
 app.include_router(router)
 
-if __name__ == "__main__":
+if __name__ == "__main__":  
     try:
         uvicorn.run("main:app", reload=True)
     except Exception as e:
