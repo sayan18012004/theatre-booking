@@ -29,16 +29,16 @@ class ratings(str, Enum):
     NC_17 = "NC_17"
 
 
-# class Movie(BaseModel):
-#     title: str
-#     genre: str
-#     start_time: str
-#     end_time: str
-#     total_seats: int
-#     booked_seats: int
-#     price_1_adult: int
-#     price_1_child: int
-#     rating: str
+class Movie(BaseModel):
+    title: str
+    genre: str
+    start_time: str
+    end_time: str
+    total_seats: int
+    booked_seats: int
+    price_1_adult: int
+    price_1_child: int
+    rating: str
 
 
 
@@ -68,20 +68,20 @@ class UsersWrapper:
             sort_keys=True,
             indent=4)
 #
-# class MoviesWrapper:
-#
-#     def __init__(self):
-#         self.movieDict = {}
-#
-#     def putMovie(self, movie: Movie):
-#         self.movieDict[movie.title] = movie
-#
-#     def has_movie(self, title: str):
-#         return title in self.movieDict
-#
-#     def toJSON(self):
-#         return json.dumps(
-#             self,
-#             default=lambda o: o.__dict__,
-#             sort_keys=True,
-#             indent=4)
+class MoviesWrapper:
+
+    def __init__(self):
+        self.movieDict = {}
+
+    def putMovie(self, movie: Movie):
+        self.movieDict[movie.title] = movie
+
+    def has_movie(self, title: str):
+        return title in self.movieDict
+
+    def toJSON(self):
+        return json.dumps(
+            self,
+            default=lambda o: o.__dict__,
+            sort_keys=True,
+            indent=4)

@@ -1,7 +1,7 @@
 from persistence.DataAccessor import *
 
 usersWrapper = read_from_file()
-# moviesWrapper = read_from_file2()
+moviesWrapper = read_from_file2()
 
 def create_user(userObject: models.User):
     if usersWrapper.has_user(userObject.username):
@@ -41,13 +41,13 @@ def delete_user(username: str):
         return "User deleted successfully"
     else:
         return "User not found"
-#
-# def create_movie(movieObject: models.Movie):
-#     if moviesWrapper.has_movie(movieObject.title):
-#         return "Movie already exists"
-#     else:
-#         moviesWrapper.putMovie(movieObject)
-#
-#     write_to_file2(moviesWrapper)
-#
-#     return "Movie created successfully"
+
+def create_movie(movieObject: models.Movie):
+    if moviesWrapper.has_movie(movieObject.title):
+        return "Movie already exists"
+    else:
+        moviesWrapper.putMovie(movieObject)
+
+    write_to_file2(moviesWrapper)
+
+    return "Movie created successfully"
