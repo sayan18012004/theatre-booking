@@ -1,12 +1,17 @@
 try:
     from persistence.DataAccessor import *
+    from models import *
 
-    users_file = 'users.pkl'
-    movies_file = 'movies.pkl'
-    usersWrapper = read_from_file(users_file)
-    moviesWrapper = read_from_file(users_file)
+    try:
+        users_file = 'users.pkl'
+        movies_file = 'movies.pkl'
+        usersWrapper = read_from_file(users_file)
+        moviesWrapper = read_from_file(movies_file)
+        
+    except Exception as e:
+        print("Error initiating variable from Services.py: ", e)
 
-    def create_user(userObject: models.User):
+    def create_user(userObject: User):
         if usersWrapper.has_user(userObject.username):
             return "User already exists"
         else:
@@ -24,7 +29,7 @@ try:
             return "User not found"
 
 
-    def update_user(username: str, userObject: models.User):
+    def update_user(username: str, userObject: User):
         if usersWrapper.has_user(username):
             usersWrapper.putUser(userObject)
 
@@ -44,15 +49,19 @@ try:
             return "User deleted successfully"
         else:
             return "User not found"
+    try:
+        def create_movie(movieObject: Movie):
+            if moviesWrapper.has_movie(movieObject.title):
+                return "Movie already exists"
+            else:
+                moviesWrapper.putMovie(movieObject)
 
-    def create_movie(movieObject: models.Movie):
-        if moviesWrapper.has_movie(movieObject.title):
-            return "Movie already exists"
-        else:
-            moviesWrapper.putMovie(movieObject)
+            write_to_file(movies_file, moviesWrapper)
 
-        write_to_file(movies_file, moviesWrapper)
+            return "Movie created successfully"
+        
+    except Exception as e:
+        print("Error in create_movie from Services.py: ", e)
 
-        return "Movie created successfully"
 except Exception as e:
     print("Error in Services.py: ", e)

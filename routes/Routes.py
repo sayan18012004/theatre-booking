@@ -42,5 +42,11 @@ try:
     @router.get("/get_movies")
     async def get_movies():
         return moviesWrapper
+    
+    @router.post("/add_movie")
+    async def createMovie(movieObject: models.Movie):
+        service_response = create_movie(movieObject)
+        return service_response
+
 except Exception as e:
     print("Error in Routes.py: ", e)
