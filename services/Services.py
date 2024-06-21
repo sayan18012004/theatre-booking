@@ -1,7 +1,9 @@
 from persistence.DataAccessor import *
 
-usersWrapper = read_from_file()
-moviesWrapper = read_from_file2()
+users_file = 'users.pkl'
+movies_file = 'movies.pkl'
+usersWrapper = read_from_file(users_file)
+moviesWrapper = read_from_file(users_file)
 
 def create_user(userObject: models.User):
     if usersWrapper.has_user(userObject.username):
@@ -9,7 +11,7 @@ def create_user(userObject: models.User):
     else:
         usersWrapper.putUser(userObject)
 
-    write_to_file(usersWrapper)
+    write_to_file(users_file, usersWrapper)
 
     return "user created successfully"
 
@@ -25,7 +27,7 @@ def update_user(username: str, userObject: models.User):
     if usersWrapper.has_user(username):
         usersWrapper.putUser(userObject)
 
-        write_to_file(usersWrapper)
+        write_to_file(users_file, usersWrapper)
 
         return "User updated successfully"
     else:
@@ -36,7 +38,7 @@ def delete_user(username: str):
     if usersWrapper.has_user(username):
         usersWrapper.deleteUser(username)
 
-        write_to_file(usersWrapper)
+        write_to_file(users_file, usersWrapper)
 
         return "User deleted successfully"
     else:
@@ -48,6 +50,6 @@ def create_movie(movieObject: models.Movie):
     else:
         moviesWrapper.putMovie(movieObject)
 
-    write_to_file2(moviesWrapper)
+    write_to_file(movies_file, moviesWrapper)
 
     return "Movie created successfully"
