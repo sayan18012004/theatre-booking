@@ -14,4 +14,4 @@ if __name__ == "__main__":
     except Exception as e:
         print("Not able to run the server. Error: ", e)
 
-# TODO: Remove local database and add SQL to the codebase
+# TODO: Remove the local database and use a SQL database for the project.
